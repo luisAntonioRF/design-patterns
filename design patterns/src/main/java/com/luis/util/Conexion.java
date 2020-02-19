@@ -5,14 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion {
-    
-    	public static Connection conectar() {
+
+	public static Connection conectar() {
 		Connection con = null;
-		
+
 		String password = "";
 		String usuario = "root";
-		String url = "jdbc:mysql://localhost:3306/devmysql?user=" + usuario
-				+ "&password=" + password;
+		String url = "jdbc:mysql://localhost:3306/devmysql?user=" + usuario + "&password=" + password;
 		try {
 			con = DriverManager.getConnection(url);
 			if (con != null) {

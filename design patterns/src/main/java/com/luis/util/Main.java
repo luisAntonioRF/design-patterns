@@ -6,37 +6,28 @@
 package com.luis.util;
 
 import com.luis.controller.ClienteController;
-import com.luis.dao.Cliente;
+import com.luis.converter.ClienteConverter;
 import com.luis.view.ClienteView;
 
-/**
- *
- * @author lramirez
- */
 public class Main {
-    public static void main(String[] args) {
-        ClienteView vista = new ClienteView();
-        ClienteController controller = new ClienteController();
-        //*creamos el objeto cliente
-        //Cliente cliente = new Cliente(2,446677,"Pedro","Lopez");
-        Cliente cliente = new Cliente();
-        //llamamos al controller
-        
-        //*llamada al metodo registrar
-        //controller.callRegistro(cliente);
-        
-        //*eliminar
-        //cliente.setId(1);
-        //controller.eliminarCliente(cliente);
-        
-        //*Actualizar
-         /*cliente.setId(2);
-         cliente.setCedula(1111);
-         cliente.setNombre("xxxxxx");
-         cliente.setApellido("yyyyyy");
-        controller.updateClientes(cliente);*/
-        
-        //*llamar a todos los Clientes
-        //controller.getAllClientes();
-    }
+	public static void main(String[] args) {
+		ClienteController controller = new ClienteController();
+		ClienteConverter converter = new ClienteConverter();
+		
+		 /*create object cliente*/
+		  //Cliente cliente = new Cliente(8,3344,"Lorena","Jimenez");
+		 
+		 /*call method registro*/
+		   //controller.callRegistro( converter.fromEntity(cliente));
+				 
+		 /*call method eliminar*/
+		  /*cliente.setId(2);
+		  controller.eliminarCliente(converter.fromEntity(cliente));*/
+
+		 /*call method Actualizar*/
+		  //controller.updateClientes(converter.fromEntity(cliente));
+		 
+		/*call all Client*/
+			controller.getAllClientes();
+	}
 }

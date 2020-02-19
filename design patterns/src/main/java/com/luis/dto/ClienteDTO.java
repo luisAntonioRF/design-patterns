@@ -1,51 +1,47 @@
 
 package com.luis.dto;
 
-public class ClienteDTO {
-    
-    private int id;
-    private int cedula;
-    private String nombre;
-    private String apellido;
+import java.io.Serializable;
 
-    public ClienteDTO() {
-    }
+public class ClienteDTO  implements Serializable{
 
-    
-    public int getId() {
-        return id;
-    }
+	private static final long serialVersionUID = -5367484877234704334L;
+	
+	private int id;
+	private int cedula;
+	private String nombre;
+	private String apellido;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public int getCedula() {
-        return cedula;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
-    }
+	public int getCedula() {
+		return cedula;
+	}
 
-    public String getNombre() {
-        return nombre;
-    }
+	public void setCedula(int cedula) {
+		this.cedula = cedula;
+	}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+	public String getNombre() {
+		return nombre;
+	}
 
-    public String getApellido() {
-        return apellido;
-    }
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+	public String getApellido() {
+		return apellido;
+	}
 
-    
-    
-    
-    
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
 }
