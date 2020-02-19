@@ -24,7 +24,8 @@ public class ClienteController {
 		IClienteServiceDao dao = new IClienteServiceImpl();
 		List<ClienteDTO> clientesListDTO = new ArrayList<>();
 		clientesListDTO = dao.getClientes();
-		vista.getAllClientes(conver.fromDTO(clientesListDTO));
+		vista.getAllClientes(conver.fromDTOMapper(clientesListDTO));
+		//vista.getAllClientes(conver.fromDTO(clientesListDTO));
 	}
 
 	public void eliminarCliente(ClienteDTO clienteDTO) {

@@ -3,6 +3,8 @@ package com.luis.converter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
+
 import com.luis.dao.Cliente;
 import com.luis.dto.ClienteDTO;
 
@@ -47,9 +49,19 @@ public class ClienteConverter extends AbstractConverter<Cliente, ClienteDTO>{
 	}
 
 	@Override
-	public List<ClienteDTO> fromEntity(List<Cliente> entity) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Cliente> fromDTOMapper(List<ClienteDTO> dto) {
+		
+		ModelMapper mapper = new ModelMapper();
+		List<Cliente> listCliente = new ArrayList<Cliente>();
+		
+		for(ClienteDTO clienteDTO : dto) {
+			Cliente cliente = mapper.map(clienteDTO, Cliente.class);
+			listCliente.add(cliente);
+		}
+		
+		return listCliente;
 	}
+
+	
 
 }

@@ -10,7 +10,8 @@ public abstract class AbstractConverter<Cliente,ClienteDTO> {
 	
 	public abstract List<Cliente> fromDTO(List<ClienteDTO> dto);
 	
-	public abstract List<ClienteDTO> fromEntity(List<Cliente> entity);
+	public abstract List<Cliente> fromDTOMapper(List<ClienteDTO> dto);
+	
 	
 	
 }
